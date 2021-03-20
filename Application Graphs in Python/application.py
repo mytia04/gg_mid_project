@@ -28,9 +28,9 @@ A path with no repeated vertices is called a simple path."""
                     return extended_path
         return None
 
-"""If we save our graph class including the find_path method as "graphs.py", we can check the way of working of our find_path function:
+""" we can check the way of working of our find_path function: """
 from graphs import Graph
-"""
+
 g = { "a" : ["d"],
       "b" : ["c"],
       "c" : ["b", "c", "d", "e"],
@@ -38,8 +38,6 @@ g = { "a" : ["d"],
       "e" : ["c"],
       "f" : []
     }
-
-
 graph = Graph(g)
 
 print("Vertices of graph:")
@@ -60,11 +58,9 @@ print(path)
 print('The path from vertex "c" to vertex "c":')
 path = graph.find_path("c", "c")
 print(path)
-"""
-The method find_all_paths finds all the paths between a start vertex to an end vertex:
+"""The method find_all_paths finds all the paths between a start vertex to an end vertex:
     def find_all_paths(self, start_vertex, end_vertex, path=[]):"""
-        """ find all paths from start_vertex to 
-            end_vertex in graph """
+""" find all paths from start_vertex to end_vertex in graph """
         graph = self.__graph_dict 
         path = path + [start_vertex]
         if start_vertex == end_vertex:
@@ -80,6 +76,7 @@ The method find_all_paths finds all the paths between a start vertex to an end v
                 for p in extended_paths: 
                     paths.append(p)
         return paths
+
 """We slightly changed our example graph by adding edges from "a" to "f" and from "f" to "d" to test the previously defined method:"""
 
 from graphs import Graph
